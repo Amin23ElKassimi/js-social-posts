@@ -122,7 +122,7 @@ const containerPosts = document.getElementById("container");
 posts.forEach((post) => {
     const cardElement = document.createElement('article');
     cardElement.innerHTML = 
-        `<div class="post">
+        `<div id="id${post.id}" class="post">
             <div class="post__header">
                 <div class="post-meta">                    
                     <div class="post-meta__icon">
@@ -152,8 +152,24 @@ posts.forEach((post) => {
                 </div> 
             </div>            
          </div>`;
+        //  Appendi al parent
          containerPosts.appendChild(cardElement);
+
+
+    // Milestone 3 -
+    // Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo. 
+    // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like
+    const currentLike = document.querySelector(`#id${post.id} .likes__cta`);
+    console.log(currentLike);
+ 
+    currentLike.addEventListener('click', function(){
+    debugger
+        // % metto o tolgo la classe css clicked allo stesso elemento
+        currentLike.classList.toggle('clicked');
+        
+    });
 });
 
 
  
+
