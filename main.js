@@ -168,12 +168,24 @@ posts.forEach((post) => {
   
         // % metto o tolgo la classe css clicked allo stesso elemento
         currentLike.classList.toggle('clicked');
-        post.likes = post.likes + 1;
+
+        if (currentLike.classList.contains('clicked')) {
+            post.likes = post.likes + 1;
+            counterLikes.innerHTML = `
+            <div class="likes__counter">
+            Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+            </div>`
+        }
+
+        else{
+        post.likes = post.likes - 1;
         console.log(post.likes)
         counterLikes.innerHTML = `
         <div class="likes__counter">
         Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
         </div>`
+        }
+
     });
 });
 

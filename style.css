@@ -108,7 +108,6 @@ h1 {
     padding: 16px;
     border-radius: 8px;    
     text-decoration: none;
-    color: #404040;
 }
 
 .like-button:not(.like-button--liked):hover {
@@ -127,5 +126,6 @@ h1 {
 
 
 .clicked{
-    background-color: #0CD977;
+    color: #0CD977;
 }
+
